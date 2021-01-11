@@ -2,6 +2,7 @@ import React from 'react';
 
 // Stateless functional component
 // Can also be written function Header (props) {
+// uses implicit return
 const Header = (props) => (
   <header className="top">
     <h1>
