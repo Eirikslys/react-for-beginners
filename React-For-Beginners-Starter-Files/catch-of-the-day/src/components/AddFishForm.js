@@ -1,16 +1,6 @@
 import React from "react";
 
 class AddFishForm extends React.Component {
-  state = {
-    fishes: {},
-    order: {}
-  };
-
-  addFish = fish => {
-    console.log("adding a fish")
-
-  }
-
   nameRef = React.createRef();
   priceRef = React.createRef();
   statusRef = React.createRef();
@@ -28,20 +18,23 @@ class AddFishForm extends React.Component {
       desc: this.descRef.current.value,
       image: this.imageRef.current.value,
     }
-    console.log(fish)
+    this.props.addFish(fish);
+    // console.log(fish)
+    event.currentTarget.reset();
   };
+
   render() {
     return (
       <form className="fish-edit" onSubmit={this.createFish}>
-      <input name="name" ref={this.nameRef} placeholder="Name" type="text"/>
-      <input name="price" ref={this.priceRef} placeholder="Price" type="text"/>
-      <select name="status" ref={this.statusRef}>
-        <option value="available">Fresh!</option>
-        <option value="unavailable">Sold out!</option>
-      </select>
-      <textarea name="desc" ref={this.descRef} placeholder="Desc"/>
-      <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
-      <button type="submit">+ Add Fish</button>
+        <input name="name" ref={this.nameRef} placeholder="Name" type="text"/>
+        <input name="price" ref={this.priceRef} placeholder="Price" type="text"/>
+        <select name="status" ref={this.statusRef}>
+          <option value="available">Fresh!</option>
+          <option value="unavailable">Sold out!</option>
+        </select>
+        <textarea name="desc" ref={this.descRef} placeholder="Desc"/>
+        <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
+        <button type="submit">+ Add Fish</button>
       </form>
     );
   };
