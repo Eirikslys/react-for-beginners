@@ -1,4 +1,5 @@
 
-# React For Beginners — [ReactForBeginners.com](https://ReactForBeginners.com)
+# Catch of the day — https://cotd.eirikslys.vercel.app/
 
-Wes Bos' react for beginners course
+
+Coded as a part of Wes Bos' react for beginners course (https://ReactForBeginners.com)
